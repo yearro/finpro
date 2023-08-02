@@ -26,6 +26,6 @@ export class UserEntity {
   @Column({ type: "varchar", length: "20" })
   state: string;
 
-  @Column({ type: "varchar", length: "300" })
+  @Column({ type: "varchar", length: "300", default: "" })
   job: string;
 }

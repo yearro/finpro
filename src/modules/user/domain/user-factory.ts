@@ -27,7 +27,8 @@ export default class UserFactory {
     email: EmailVO,
     password: string,
     phone: number,
-    isAdmin: boolean
+    isAdmin: boolean,
+    job: string
   ) {
     if (!name || name.trim() === "") {
       return err(new UserNameRequiredException());
@@ -60,6 +61,7 @@ export default class UserFactory {
       isAdmin,
       phone,
       state: "Active",
+      job,
     };
     const user = new User(userProperties);
     return ok(user);

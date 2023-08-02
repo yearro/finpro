@@ -10,12 +10,11 @@ export class AppService {
       host: process.env.DB_HOST || "localhost",
       port: +process.env.DB_PORT || 3310,
       entities: [process.env.DB_ENTITIES || "dist/**/*.entity.js"],
-      username: process.env.DB_USER || "finprouser",
+      username: process.env.DB_USER || "finpro",
       password: process.env.DB_PASS || "wn6nu1Y2",
-      database: process.env.DB_NAME || "dbfinpro",
-      synchronize: process.env.DB_SYNC === "true" ? true : false,
-      logging: process.env.DB_LOG === "true" ? true : false,
-      autoLoadEntities: false,
+      database: process.env.DB_NAME || "finprodb",
+      synchronize: true,
+      logging: true
     };
   }
 }

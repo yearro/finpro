@@ -20,7 +20,7 @@ export default class {
   }
 
   async insert(req: Request, res: Response, next: NextFunction) {
-    const { name, lastname, email, password, phone, isAdmin } = req.body;
+    const { name, lastname, email, password, phone, isAdmin, job } = req.body;
     const emailResult = EmailVO.create(email);
     if (emailResult.isErr()) {
       const err: IError = new Error(emailResult.error.message);
@@ -33,7 +33,8 @@ export default class {
       emailResult.value,
       password,
       phone,
-      isAdmin
+      isAdmin,
+      job
     );
     if (userResult.isErr()) {
       const err: IError = new Error(userResult.error.message);
