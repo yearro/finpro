@@ -1,6 +1,7 @@
-const uglify = require('gulp-uglify-es').default
-const { src, dest } = require('gulp')
+const uglify = require("gulp-uglify-es").default;
+const { src, dest } = require("gulp");
 
-const minifyAndOfuscate = () => src('./cache/src/**/*.js').pipe(uglify()).pipe(dest('./dist'))
+const minifyAndOfuscate = () =>
+  src("./cache/src/**/*.js").pipe(uglify()).pipe(dest("./dist"));
 
-exports.minify = minifyAndOfuscate
+exports.minify = minifyAndOfuscate;

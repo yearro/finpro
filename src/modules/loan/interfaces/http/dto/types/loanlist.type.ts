@@ -1,2 +1,2 @@
-import { LoanDTO } from '../interfaces/loanlist.interface'
-export type LoanListDTO = LoanDTO[]
+import { LoanDTO } from "../interfaces/loanlist.interface";
+export type LoanListDTO = LoanDTO[];

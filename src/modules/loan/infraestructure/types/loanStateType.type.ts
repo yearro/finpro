@@ -1,1 +1,1 @@
-export type stateType = 'All' | 'Active' | 'Paid' | 'Delayed' | 'Restructured'
+export type stateType = "All" | "Active" | "Paid" | "Delayed" | "Restructured";

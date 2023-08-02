@@ -1,2 +1,2 @@
-import { UserDTO } from '../interfaces/userdelete.interface'
-export type UserDeleteDTO = UserDTO
+import { UserDTO } from "../interfaces/userdelete.interface";
+export type UserDeleteDTO = UserDTO;
