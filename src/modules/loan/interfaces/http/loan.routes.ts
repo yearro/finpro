@@ -19,11 +19,7 @@ class LoanRouter {
     // Design pattern Chain of Responsability
     this.expressRouter.post("/insert", controller.insert);
     this.expressRouter.get("/list/:state", ...MiddlewareState, controller.list);
-    this.expressRouter.get(
-      "/listOne/:id",
-      ...MiddlewareGuid,
-      controller.listOne
-    );
+    this.expressRouter.get("/listOne/:id", controller.listOne);
     this.expressRouter.get(
       "/listByUser/:guid",
       ...MiddlewareGuid,

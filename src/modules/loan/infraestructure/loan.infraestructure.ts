@@ -28,6 +28,7 @@ export default class LoanInfraestructure implements LoanRepository {
       state,
       paymentDate,
       balance,
+      id: 0,
     });
     await DatabaseBootstrap.dataSource
       .getRepository(LoanEntity)
@@ -37,7 +38,8 @@ export default class LoanInfraestructure implements LoanRepository {
 
   async list(state: stateType): Promise<Loan[]> {
     const repo = DatabaseBootstrap.dataSource.getRepository(LoanEntity);
-    const result = await repo.find({ where: { state } });
+    const query = state === "All" ? {} : { where: { state } };
+    const result = await repo.find(query);
     return result.map((el: LoanEntity) => {
       return new Loan({
         id: el.id,

@@ -7,6 +7,6 @@ export class LoanNotFoundException extends DomainException {
     this.name = DomainExceptionCode.LOAN_NOT_FOUND;
   }
   static getMessage() {
-    return "Balance is required";
+    return "Not found loan";
   }
 }
