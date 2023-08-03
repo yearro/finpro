@@ -17,7 +17,7 @@ export class UserEntity {
   @Column({ type: "varchar", length: "100" })
   password: string;
 
-  @Column()
+  @Column({ type: "bigint" })
   phone: number;
 
   @Column({ type: "boolean", default: true })

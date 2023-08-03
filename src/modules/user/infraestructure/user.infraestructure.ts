@@ -43,7 +43,7 @@ export default class UserInfraestructure implements UserRepository {
 
   async list(state: userStateType): Promise<User[]> {
     const repo = DatabaseBootstrap.dataSource.getRepository(UserEntity);
-    const query = (state === 'All') ? {} : { where: { state } }
+    const query = state === "All" ? {} : { where: { state } };
     const result = await repo.find(query);
     return result.map((el: UserEntity) => {
       const emailResult = EmailVO.create(el.email);

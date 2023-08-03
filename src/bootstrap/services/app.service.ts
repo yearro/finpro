@@ -14,7 +14,7 @@ export class AppService {
       password: process.env.DB_PASS || "wn6nu1Y2",
       database: process.env.DB_NAME || "finprodb",
       synchronize: true,
-      logging: true
+      logging: true,
     };
   }
 }
