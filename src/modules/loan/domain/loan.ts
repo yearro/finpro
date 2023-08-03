@@ -10,6 +10,7 @@ export default class Loan implements IEntity<LoanRequired, LoanUpdate> {
   private state: string;
   private paymentDate: string;
   private balance: number;
+  private id: number;
 
   constructor(loanProperties: LoanRequired) {
     this.state = "Active";
@@ -25,6 +26,7 @@ export default class Loan implements IEntity<LoanRequired, LoanUpdate> {
       state: this.state,
       paymentDate: this.paymentDate,
       balance: this.balance,
+      id: this.id
     };
   }
 
