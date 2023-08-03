@@ -25,8 +25,8 @@ class LoanRouter {
       ...MiddlewareGuid,
       controller.listByUser
     );
-    this.expressRouter.put("/update/:guid", controller.update);
-    this.expressRouter.delete("/delete/:guid", controller.delete);
+    this.expressRouter.put("/update/:id", controller.update);
+    this.expressRouter.delete("/delete/:id", controller.delete);
   }
 }
 
