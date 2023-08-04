@@ -7,6 +7,6 @@ export class LoanUserGuidRequiredException extends DomainException {
     this.name = DomainExceptionCode.LOAN_USER_GUID_REQUIRED;
   }
   static getMessage() {
-    return "Guid user required is required";
+    return "Guid user is required";
   }
 }

@@ -62,8 +62,16 @@ export default class {
       return next(err);
     }
     const data = await this.application.insert(loanResult.value);
-    const result = new LoanInsertMapping().execute(data.properties());
-    res.status(201).json(result);
+    if(data.isErr()) {
+      const err: IError = new Error(data.error.message);
+      err.status = 411;
+      return next(err);
+    } else {
+      const result = new LoanInsertMapping().execute(
+        data.value.properties()
+      );
+      res.status(201).json(result);
+    }
   }
 
   async delete(req: Request, res: Response, next: NextFunction) {

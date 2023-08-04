@@ -2,14 +2,16 @@ import Loan from "../domain/loan";
 import { LoanUpdate } from "../domain/interfaces/loandUpdate.interface";
 import { LoanRepository } from "../domain/loan.repository";
 import { LoanEntity } from "./loan.entity";
+import { UserEntity } from '../../user/infraestructure/user.entity'
 import DatabaseBootstrap from "../../../bootstrap/database.bootstrap";
 import { stateType } from "./types/loanStateType.type";
 import { LoanNotFoundException } from "../domain/exceptions/loanNotFound.exception";
-import { Result } from "neverthrow";
-import { err, ok } from "neverthrow";
+import { LoanAvalNotFoundException } from '../domain/exceptions/loanAvalNotFound.exception'
+import { LoanUserNotFoundException } from '../domain/exceptions/loanUserNotFound.exception'
+import { Result, err, ok } from "neverthrow";
 
 export default class LoanInfraestructure implements LoanRepository {
-  async insert(loan: Loan): Promise<Loan> {
+  async insert(loan: Loan): Promise<Result<Loan, LoanUserNotFoundException | LoanAvalNotFoundException>> {
     const loanInsert = new LoanEntity();
     const {
       amount,
@@ -20,6 +22,16 @@ export default class LoanInfraestructure implements LoanRepository {
       paymentDate,
       balance,
     } = loan.properties();
+
+    const repo = DatabaseBootstrap.dataSource.getRepository(UserEntity);
+    const userFound = await repo.findOne({ where: { guid: deptorGuid } });
+    if (!userFound) {
+      return err(new LoanUserNotFoundException());
+    }
+    const avalFound = await repo.findOne({ where: { guid: avalGuid } });
+    if (!avalFound) {
+      return err(new LoanAvalNotFoundException());
+    }
     Object.assign(loanInsert, {
       amount,
       deptorGuid,
@@ -30,10 +42,21 @@ export default class LoanInfraestructure implements LoanRepository {
       balance,
       id: 0,
     });
-    await DatabaseBootstrap.dataSource
+    const loanEntity = await DatabaseBootstrap.dataSource
       .getRepository(LoanEntity)
       .save(loanInsert);
-    return loan;
+    return ok(
+        new Loan({
+          id: loanEntity.id,
+          amount: loanEntity.amount,
+          deptorGuid: loanEntity.deptorGuid,
+          avalGuid: loanEntity.avalGuid,
+          currentRate: loanEntity.currentRate,
+          state: loanEntity.state,
+          paymentDate: loanEntity.paymentDate,
+          balance: loanEntity.balance,
+        })
+      );
   }
 
   async list(state: stateType): Promise<Loan[]> {
