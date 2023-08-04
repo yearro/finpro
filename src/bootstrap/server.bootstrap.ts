@@ -1,11 +1,11 @@
-import http from "http";
-import { Application } from "express";
-import { Bootstrap } from "./base.bootstrap";
-import { AppService } from "./services/app.service";
+import http from 'http';
+import { Application } from 'express';
+import { Bootstrap } from './base.bootstrap';
+import { AppService } from './services/app.service';
 
 export default class extends Bootstrap {
   constructor(private app: Application) {
-    super(); // Apunta a la super clase para trabajar con ella
+    super();
   }
   // Principio solid: Liskov sustitution se hereda e implementa de un padre
   // Principio solid: Single Responsability sólo hace una cosa, inicializar el servidor
@@ -15,10 +15,10 @@ export default class extends Bootstrap {
       const server = http.createServer(this.app);
       server
         .listen(`${AppService.PORT}`)
-        .on("listening", () => {
+        .on('listening', () => {
           console.log(`Server listening on port: ${AppService.PORT}`);
         })
-        .on("error", (error) => {
+        .on('error', (error:) => {
           reject(error);
           console.log(`Server error on port: ${AppService.PORT}`);
         });
