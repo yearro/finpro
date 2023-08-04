@@ -13,8 +13,8 @@ export class AppService {
       username: process.env.DB_USER || 'finpro',
       password: process.env.DB_PASS || 'wn6nu1Y2',
       database: process.env.DB_NAME || 'finprodb',
-      synchronize: true,
-      logging: true,
+		synchronize: !!process.env.DB_SYNC || false,
+		logging: !!process. env.DB_LOGG || false,
     };
   }
 }

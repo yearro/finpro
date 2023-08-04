@@ -18,7 +18,7 @@ export default class extends Bootstrap {
         .on('listening', () => {
           console.log(`Server listening on port: ${AppService.PORT}`);
         })
-        .on('error', (error:) => {
+        .on('error', error => {
           reject(error);
           console.log(`Server error on port: ${AppService.PORT}`);
         });
