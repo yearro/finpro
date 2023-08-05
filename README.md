@@ -1,6 +1,8 @@
 # finpro
 
-finpro is a project to explore hexagonal architecture
+finpro is a project to explore hexagonal architecture.
+
+The backend is a model for users to register and with this information to be able to add loans, the next step is to add the payments for these loans.
 
 # Requirements
 
@@ -44,3 +46,6 @@ yarn format / npm run format
 ```
 yarn prod / npm run prod
 ```
+## Testing the endpoints
+
+Inside the ```Postman``` folder there is a collection so you can test the endpoints of the project
