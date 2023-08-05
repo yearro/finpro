@@ -62,4 +62,4 @@ yarn prod / npm run prod
 
 ## Testing the endpoints
 
-Inside the `Postman` folder there is a collection so you can test the endpoints of the project
+Inside the [Postman](https://github.com/yearro/finpro/blob/main/Postman/Finpro.collection.json) folder there is a collection so you can test the endpoints of the project
