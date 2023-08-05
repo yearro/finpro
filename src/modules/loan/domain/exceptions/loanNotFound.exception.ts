@@ -1,12 +1,12 @@
-import { DomainException } from "./domain.exception";
-import { DomainExceptionCode } from "../enums/domainException.enum";
+import { DomainException } from './domain.exception'
+import { DomainExceptionCode } from '../enums/domainException.enum'
 
 export class LoanNotFoundException extends DomainException {
-  constructor() {
-    super(LoanNotFoundException.getMessage());
-    this.name = DomainExceptionCode.LOAN_NOT_FOUND;
-  }
-  static getMessage() {
-    return "Not found loan";
-  }
+   constructor() {
+      super(LoanNotFoundException.getMessage())
+      this.name = DomainExceptionCode.LOAN_NOT_FOUND
+   }
+   static getMessage() {
+      return 'Not found loan'
+   }
 }

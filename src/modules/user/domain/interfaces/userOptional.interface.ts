@@ -1,4 +1,4 @@
 export interface UserOptional {
-  job: string;
-  guid: string;
+   job: string
+   guid: string
 }

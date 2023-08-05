@@ -1,270 +1,202 @@
 {
-	"info": {
-		"_postman_id": "5c03e413-f5ac-4f4a-b5df-709d4418447c",
-		"name": "Finpro",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "236233"
-	},
-	"item": [
-		{
-			"name": "Health Check",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{LOCAL}}/",
-					"host": [
-						"{{LOCAL}}"
-					],
-					"path": [
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "User List",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{LOCAL}}/user/list/All",
-					"host": [
-						"{{LOCAL}}"
-					],
-					"path": [
-						"user",
-						"list",
-						"All"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add new user",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"Elimina\",\n    \"lastname\": \"Elimina\",\n    \"email\": \"elimina.armenta2@gmail.com\",\n    \"password\": \"ASM2016ver2\",\n    \"phone\": 33333333,\n    \"isAdmin\": false\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{LOCAL}}/user/insert",
-					"host": [
-						"{{LOCAL}}"
-					],
-					"path": [
-						"user",
-						"insert"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List One",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{LOCAL}}/user/listOne/8c40e5d9-3c19-4626-87eb-7aadefc4756f",
-					"host": [
-						"{{LOCAL}}"
-					],
-					"path": [
-						"user",
-						"listOne",
-						"8c40e5d9-3c19-4626-87eb-7aadefc4756f"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update user",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"Yeri\",\n    \"isAdmin\": true,\n    \"phone\": 3434343434\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{LOCAL}}/user/update/8c40e5d9-3c19-4626-87eb-7aadefc4756f",
-					"host": [
-						"{{LOCAL}}"
-					],
-					"path": [
-						"user",
-						"update",
-						"8c40e5d9-3c19-4626-87eb-7aadefc4756f"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete user",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{LOCAL}}/user/delete/159e8fe5-8100-4329-93ed-d41d747bf55e",
-					"host": [
-						"{{LOCAL}}"
-					],
-					"path": [
-						"user",
-						"delete",
-						"159e8fe5-8100-4329-93ed-d41d747bf55e"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Loan List",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{LOCAL}}/loan/list/All",
-					"host": [
-						"{{LOCAL}}"
-					],
-					"path": [
-						"loan",
-						"list",
-						"All"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add new loan",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"amount\": 333333,\n    \"deptorGuid\": \"159e8fe5-8100-4329-93ed-d41d747bf55e\",\n    \"avalGuid\": \"8c40e5d9-3c19-4626-87eb-7aadefc4756f\",\n    \"currentRate\": 8,\n    \"paymentDate\": \"28\",\n    \"balance\": 345.555\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{LOCAL}}/loan/insert",
-					"host": [
-						"{{LOCAL}}"
-					],
-					"path": [
-						"loan",
-						"insert"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List one loan",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{LOCAL}}/loan/listOne/1",
-					"host": [
-						"{{LOCAL}}"
-					],
-					"path": [
-						"loan",
-						"listOne",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List loands by user",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{LOCAL}}/loan/listByUser/159e8fe5-8100-4329-93ed-d41d747bf55e",
-					"host": [
-						"{{LOCAL}}"
-					],
-					"path": [
-						"loan",
-						"listByUser",
-						"159e8fe5-8100-4329-93ed-d41d747bf55e"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update loan",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"amount\": 56655555.89,\n    \"currentRate\": 4,\n    \"paymentDate\": \"28\",\n    \"balance\": 345.555\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{LOCAL}}/loan/update/1",
-					"host": [
-						"{{LOCAL}}"
-					],
-					"path": [
-						"loan",
-						"update",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete loan",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{LOCAL}}/loan/delete/1",
-					"host": [
-						"{{LOCAL}}"
-					],
-					"path": [
-						"loan",
-						"delete",
-						"1"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+   "info": {
+      "_postman_id": "5c03e413-f5ac-4f4a-b5df-709d4418447c",
+      "name": "Finpro",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "_exporter_id": "236233"
+   },
+   "item": [
+      {
+         "name": "Health Check",
+         "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+               "raw": "{{LOCAL}}/",
+               "host": ["{{LOCAL}}"],
+               "path": [""]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "User List",
+         "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+               "raw": "{{LOCAL}}/user/list/All",
+               "host": ["{{LOCAL}}"],
+               "path": ["user", "list", "All"]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "Add new user",
+         "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+               "mode": "raw",
+               "raw": "{\n    \"name\": \"Elimina\",\n    \"lastname\": \"Elimina\",\n    \"email\": \"elimina.armenta2@gmail.com\",\n    \"password\": \"ASM2016ver2\",\n    \"phone\": 33333333,\n    \"isAdmin\": false\n}",
+               "options": {
+                  "raw": {
+                     "language": "json"
+                  }
+               }
+            },
+            "url": {
+               "raw": "{{LOCAL}}/user/insert",
+               "host": ["{{LOCAL}}"],
+               "path": ["user", "insert"]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "List One",
+         "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+               "raw": "{{LOCAL}}/user/listOne/8c40e5d9-3c19-4626-87eb-7aadefc4756f",
+               "host": ["{{LOCAL}}"],
+               "path": ["user", "listOne", "8c40e5d9-3c19-4626-87eb-7aadefc4756f"]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "Update user",
+         "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+               "mode": "raw",
+               "raw": "{\n    \"name\": \"Yeri\",\n    \"isAdmin\": true,\n    \"phone\": 3434343434\n}",
+               "options": {
+                  "raw": {
+                     "language": "json"
+                  }
+               }
+            },
+            "url": {
+               "raw": "{{LOCAL}}/user/update/8c40e5d9-3c19-4626-87eb-7aadefc4756f",
+               "host": ["{{LOCAL}}"],
+               "path": ["user", "update", "8c40e5d9-3c19-4626-87eb-7aadefc4756f"]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "Delete user",
+         "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+               "raw": "{{LOCAL}}/user/delete/159e8fe5-8100-4329-93ed-d41d747bf55e",
+               "host": ["{{LOCAL}}"],
+               "path": ["user", "delete", "159e8fe5-8100-4329-93ed-d41d747bf55e"]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "Loan List",
+         "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+               "raw": "{{LOCAL}}/loan/list/All",
+               "host": ["{{LOCAL}}"],
+               "path": ["loan", "list", "All"]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "Add new loan",
+         "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+               "mode": "raw",
+               "raw": "{\n    \"amount\": 333333,\n    \"deptorGuid\": \"159e8fe5-8100-4329-93ed-d41d747bf55e\",\n    \"avalGuid\": \"8c40e5d9-3c19-4626-87eb-7aadefc4756f\",\n    \"currentRate\": 8,\n    \"paymentDate\": \"28\",\n    \"balance\": 345.555\n}",
+               "options": {
+                  "raw": {
+                     "language": "json"
+                  }
+               }
+            },
+            "url": {
+               "raw": "{{LOCAL}}/loan/insert",
+               "host": ["{{LOCAL}}"],
+               "path": ["loan", "insert"]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "List one loan",
+         "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+               "raw": "{{LOCAL}}/loan/listOne/1",
+               "host": ["{{LOCAL}}"],
+               "path": ["loan", "listOne", "1"]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "List loands by user",
+         "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+               "raw": "{{LOCAL}}/loan/listByUser/159e8fe5-8100-4329-93ed-d41d747bf55e",
+               "host": ["{{LOCAL}}"],
+               "path": ["loan", "listByUser", "159e8fe5-8100-4329-93ed-d41d747bf55e"]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "Update loan",
+         "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+               "mode": "raw",
+               "raw": "{\n    \"amount\": 56655555.89,\n    \"currentRate\": 4,\n    \"paymentDate\": \"28\",\n    \"balance\": 345.555\n}",
+               "options": {
+                  "raw": {
+                     "language": "json"
+                  }
+               }
+            },
+            "url": {
+               "raw": "{{LOCAL}}/loan/update/1",
+               "host": ["{{LOCAL}}"],
+               "path": ["loan", "update", "1"]
+            }
+         },
+         "response": []
+      },
+      {
+         "name": "Delete loan",
+         "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+               "raw": "{{LOCAL}}/loan/delete/1",
+               "host": ["{{LOCAL}}"],
+               "path": ["loan", "delete", "1"]
+            }
+         },
+         "response": []
+      }
+   ]
 }

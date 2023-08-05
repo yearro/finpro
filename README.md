@@ -19,33 +19,47 @@ docker run -d -p 3310:3306 -v :/var/lib/mysql --name mysqlserver -e MYSQL_ROOT_P
 **Verify that the container has been created and is active**
 
 ## Install
+
 ```
 yarn install / npm install
 ```
+
 ## Build
+
 ```
 yarn build / npm run build
 ```
+
 ## Run development mode
+
 ```
 yarn dev / npm run dev
 ```
+
 ## Check lint
+
 ```
 yarn lint / npm run lint
 ```
+
 ## Fix lint
+
 ```
 yarn lint:fix / npm run lint:fix
 ```
+
 ## Auto format
+
 ```
 yarn format / npm run format
 ```
+
 ## Run production mode
+
 ```
 yarn prod / npm run prod
 ```
+
 ## Testing the endpoints
 
-Inside the ```Postman``` folder there is a collection so you can test the endpoints of the project
+Inside the `Postman` folder there is a collection so you can test the endpoints of the project
