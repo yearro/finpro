@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  mysql-server:
+    image: mysql:8
+    container_name: mysqlserver
+    environment:
+      - MYSQL_ROOT_PASSWORD=wn6nu1Y2
+      - MYSQL_USER=finpro
+      - MYSQL_PASSWORD=wn6nu1Y2
+      - MYSQL_DATABASE=finprodb
+    ports:
+      - "3310:3306"
+    networks:
+      - net-mysql-finpro
+    volumes:
+      - data-mysql-finpro:/var/lib/mysql
+
+networks:
+  net-mysql-server:
+
+volumes:
+  data-mysql-volume:

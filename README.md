@@ -13,7 +13,7 @@ Docker
 ### Create instance of dedatabase server
 
 ```
-docker run -d -p 3310:3306 -v :/var/lib/mysql --name mysqlserver -e MYSQL_ROOT_PASSWORD=wn6nu1Y2 -e MYSQL_USER=finpro -e MYSQL_PASSWORD=wn6nu1Y2 -e  MYSQL_DATABASE=finprodb mysql:8
+docker compose up -d
 ```
 
 **Verify that the container has been created and is active**
